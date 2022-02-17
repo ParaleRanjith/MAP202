@@ -1,4 +1,8 @@
+<?php
 
+    include_once ('headerPublic.php');
+
+?>
 
 <h1>LAB 4 LOGIN</h1>
 
