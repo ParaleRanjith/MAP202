@@ -25,8 +25,7 @@
              <button type="submit" class="btn btn-primary">Search</button>
          </div>
          </form>
-        </div>
-    </div>
+     
          
 
     <?php require_once 'app/views/templates/footer.php' ?>

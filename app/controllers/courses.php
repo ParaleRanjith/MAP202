@@ -17,11 +17,25 @@ class Courses extends Controller {
     }
 
         public function display ($department = null, $program = null) {
-
+            if ($department == null) {
+                header("Location:/courses");
+            }
             $courseModel = $this->model('Course');
+
+            if ($program) {
+                $courses = $courseModel->get_all_courses($program); 
+                $this->view('courses/courses',
+                [
+                    'program' => $program,
+                    'courses' => $courses
+                ]
+                );
+                die;
+}
+            
             $programs = $courseModel->get_all_programs($department);
             
-            $this->view('courses/display',
+            $this->view('courses/programs',
                 [
                     'department' => $department,
                     'programs' => $programs
@@ -31,3 +45,4 @@ class Courses extends Controller {
             
         }
 }
+
