@@ -2,9 +2,11 @@
 
 class Courses extends Controller {
 
-    public function index() {	
-        $courseModel = $this->model('Course');
+    public function index() {
+     	 
+    $courseModel = $this->model('Course');
         $departments = $courseModel->get_all_departments();
+        
         
         
 	    $this->view('courses/index',

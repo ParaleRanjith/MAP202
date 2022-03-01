@@ -15,10 +15,7 @@ class App {
         // This will return a broken up URL
         // it will be /controller/method
         $url = $this->parseUrl();
-		
-		//echo "<pre>";
-		//print_r ($url);
-		//die;
+	
 
         /* if controller exists in the URL, then go to it
          * if not, then go to this->controller which is defaulted to home 
