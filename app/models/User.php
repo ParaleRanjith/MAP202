@@ -10,6 +10,39 @@ class User {
         
     }
 
+    public function register ($username, $password) {
+        $username = strtolower($username);
+        $hash = password_hash($password,  PASSWORD_DEFAULT);
+
+
+		$db = db_connect();
+        $statement = $db->prepare("INSERT INTO users (username, password)
+                                VALUES (:username, :psw);
+                ");
+        $statement->bindValue(':username', $username);
+        $statement->bindValue(':psw', $hash);
+        $statement->execute();
+    }
+  
+    public function check_username($username) {
+        
+		$username = strtolower($username);
+		$db = db_connect();
+        $statement = $db->prepare("select * from users
+                                WHERE username = :name;
+                ");
+        $statement->bindValue(':name', $username);
+        $statement->execute();
+        $rows = $statement->fetch(PDO::FETCH_ASSOC);
+
+        if ($rows) {
+             return 1;
+        } else {
+            return 0;
+        }
+
+    }
+
     public function authenticate($username, $password) {
         /*
          * if username and password good then

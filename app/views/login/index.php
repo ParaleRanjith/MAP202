@@ -6,7 +6,15 @@
                 <h1>You are not logged in</h1>
             </div>
         </div>
-    </div>
+
+        <?php
+        if ($_SESSION['register']  == 1) {
+    ?>
+            <div class="alert alert-success" role="alert">
+                Your account has been created! Please login!
+            </div>
+        <?php unset ($_SESSION['register']); } ?>
+    
 
 <div class="row">
     <div class="col-sm-auto">
@@ -23,6 +31,12 @@
 		  <button type="submit" class="btn btn-primary">Login</button>
 		</fieldset>
 		</form> 
-	</div>
-</div>
+
+        <div class="row">
+            <div class="col g-3">
+                <p><a href="/register/signup">Sighn up!</a></p>
+            </div>
+        </div>
+	
+
     <?php require_once 'app/views/templates/footer.php' ?>
