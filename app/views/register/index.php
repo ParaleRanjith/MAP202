@@ -1,4 +1,4 @@
-<?php require_once 'app/views/templates/headerPublic.php' ?>
+<?php require_once 'app/views/templates/templates2/header1.php' ?>
 <div class="container">
         <div class="row">
             <div class="col">
@@ -14,6 +14,15 @@
             </div>
         <?php unset ($_SESSION['usernameCheck']); } ?>
 
+        <?php
+        if ($_SESSION['password']  == 0) {
+    ?>
+            <div class="alert alert-warning" role="alert">
+              Your password does not meet the minimum requirement! Please read the instruction $ Try again
+            </div>
+        <?php unset ($_SESSION['password']); } ?>
+
+
 <form class="row g-3" action="/register/verify"  method="post"  >
     <div class="col-12">
 				<label for="username">Username</label>
@@ -23,7 +32,7 @@
 				<label for="password">Password</label>
 				<input required type="password" class="form-control" name="password">
                 <div id="passwordHelpBlock" class="form-text">
-                    Your password mus be at least 4 characters long..   
+                    Your password mus be at least 4 characters & must not be user name!  
                 </div>
 			</div>
             <div class="col-12">

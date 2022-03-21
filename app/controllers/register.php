@@ -10,14 +10,29 @@ class Register extends Controller {
         $username = $_REQUEST['username'];
         $password = $_REQUEST['password'];
 
-        $user = $this->model('user');
-$user_check = $user->check_username($username);
-        
+        $user = $this->model('User');
+
+        $user_check = $user->check_username($username);
+
+
         if ($user_check ==1) {
             $_SESSION ['usernameCheck'] = 1;
             header('location:/register');
-            die;    
+            die;
+                
         }
+
+        if(($username == $password)) {
+        header('location:/register');
+        die;
+
+        }
+
+        if(strlen($password) < 4) {
+            header('location:/register');
+            die;
+            }
+
 
         $user->register($username, $password);
         $_SESSION ['register'] = 1;
