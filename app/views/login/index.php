@@ -1,4 +1,4 @@
-<?php require_once 'app/views/templates/templates2/header1.php' ?>
+<?php require_once 'app/views/templates/headerPublic.php' ?>
 <main role="main" class="container">
     <div class="page-header" id="banner">
         <div class="row">
@@ -30,12 +30,6 @@
 			</div>
 		  <button type="submit" class="btn btn-primary">Login</button>
 		</fieldset>
-
-        <div class="row">
-            <div class="col g-3">
-                <p><a href="/register/signup">Sign up!</a></p>
-            </div>
-        </div>
 	
 		</form> 
 

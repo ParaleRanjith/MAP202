@@ -1,4 +1,4 @@
-<?php require_once 'app/views/templates/templates2/header1.php' ?>
+<?php require_once 'app/views/templates/headerPublic.php' ?>
 <div class="container">
         <div class="row">
             <div class="col">
@@ -39,6 +39,8 @@
 		            <button type="submit" class="btn btn-primary">Register</button>
             </div>
 		</form> 
+
+        
 	
 
     <?php require_once 'app/views/templates/footer.php' ?>

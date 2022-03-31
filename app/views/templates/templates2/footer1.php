@@ -1,27 +1,17 @@
-<script>
-$(document).ready(function($) {
 
-$(window).on('scroll', function() {
+<footer class="container-fluid text-center">
+<div class="row">
+            <div class="col g-3">
+                <button class="btn btn-warning"><a href="/register/signup">Register</a></button>
+            </div>
+        </div>
+        </footer>
 
-  //ADD .TIGHT
-  if ($(window).scrollTop() + $(window).height() > $('.wrapper').outerHeight()) {
-    $('body').addClass('tight');
-    $('.arrow').hide();
-  } else {
-    $('body').removeClass('tight');
-    $('.arrow').show();
-  }
-});
+ <!-- ending container div -->
 
-//BACK TO PRESENTATION MODE
-$("html").on("click", "body.tight .wrapper", function() {
-  $('html, body').animate({
-    scrollTop: $('.wrapper').outerHeight() - $(window).height()
-  }, 500);
-});
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
-});
+</html>
 
-$('.arrow').click(function(){
- $("html").animate({ scrollTop: $('html').prop("scrollHeight")}, 1200);
-});
+
