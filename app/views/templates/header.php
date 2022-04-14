@@ -46,7 +46,7 @@ if (!isset($_SESSION['auth'])) {
                     </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link disabled">Disabled</a>
+                    <a class="nav-link" href="/inventory">Inventory</a>
                     </li>
                 </ul>
             </div>

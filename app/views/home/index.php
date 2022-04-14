@@ -3,9 +3,17 @@
         <div class="row">
             <div class="col">
                 <h1 class="display-3">Welcome to MAP 202</h1>
-                <p class="lead"><small class="text-muted"> <?= date("F jS, Y"); ?></small></p>
+                <p class="lead"><small class="text-muted"> The Current Weather Is <?=round($data['temp'])?> degrees</small></p>
             </div>
         </div>
+
+        <?php
+        if ($_SESSION['roleMessage']) {
+    ?>
+            <div class="alert alert-warning" role="alert">
+                <?=$_SESSION['roleMessage']?>
+            </div>
+        <?php unset ($_SESSION['roleMessage']); } ?>
     
 
     <div class="row">

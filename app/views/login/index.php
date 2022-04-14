@@ -33,6 +33,12 @@
 	
 		</form> 
 
+        <div class="row">
+            <div class="col g-3">
+                <button class="btn btn-warning"><a href="/register/signup">Register</a></button>
+            </div>
+        </div>
+
        
 
-    <?php require_once 'app/views/templates/templates2/footer1.php' ?>
+    <?php require_once 'app/views/templates/footer.php' ?>
